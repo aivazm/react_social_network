@@ -1,10 +1,12 @@
 import React from 'react';
+import './Profile.module.css';
+import classes from './Profile.module.css'
 
 const Profile = () => {
     return (
-        <div className={'content'}>
+        <div className={classes.content}>
             <div>
-                <img src='https://www.w3schools.com/howto/img_snow_wide.jpg'/>
+                <img src='https://image.freepik.com/free-photo/wide-asphalt-road-with-buildings-horizon_1127-2192.jpg'/>
             </div>
             <div>
                 ava + description
@@ -15,9 +17,9 @@ const Profile = () => {
                     new post
                 </div>
             </div>
-            <div>
-                <div>post1</div>
-                <div>post2</div>
+            <div className='posts'>
+                <div className={classes.item}>post1</div>
+                <div className={classes.item}>post2</div>
             </div>
         </div>);
 };
