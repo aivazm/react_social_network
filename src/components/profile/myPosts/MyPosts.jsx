@@ -8,13 +8,12 @@ const MyPosts = () => {
         <div className={classes.content}>
             My posts
             <div>
-                <textarea></textarea>
+                <textarea placeholder={'Some message'}/>
                 <button>Add post</button>
             </div>
             <div className={classes.posts}>
-                <Post/>
-                <Post/>
-                <Post/>
+                <Post message={'Hi, ebba'} likeCount={'1'}/>
+                <Post message={'It is my first post'} likeCount={'2'}/>
             </div>
         </div>
     );

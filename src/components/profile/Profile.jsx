@@ -1,11 +1,10 @@
 import React from 'react';
 import './Profile.module.css';
-import classes from './Profile.module.css'
 import MyPosts from "./myPosts/MyPosts";
 
 const Profile = () => {
     return (
-        <div className={classes.content}>
+        <div>
             <div>
                 <img src='https://image.freepik.com/free-photo/wide-asphalt-road-with-buildings-horizon_1127-2192.jpg'/>
             </div>
