@@ -21,7 +21,8 @@ const Navbar = () => {
             <div className={`${classes.item} ${classes.active}`}>
                  Settings
             </div>
-        </nav>);
+        </nav>
+    );
 };
 
 export default Navbar;
