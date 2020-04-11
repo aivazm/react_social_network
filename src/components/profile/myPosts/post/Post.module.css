@@ -1,6 +1,14 @@
 .content {
     grid-area: c;
-    background-color: lightblue;
+    background-color: darkgray;
+}
+
+.like {
+    color: blue;
+}
+
+.likesCount {
+    color: lightslategray;
 }
 
 .item{
@@ -8,6 +16,6 @@
 }
 .item img{
     height: 50px;
-    width: 50px;
+    width: 45px;
     border-radius: 50px;
 }

@@ -5,15 +5,19 @@ import Post from "./post/Post";
 
 const MyPosts = () => {
     return (
-        <div className={classes.content}>
-            My posts
+        <div className={classes.postBlock}>
+            <h3>My posts</h3>
             <div>
-                <textarea placeholder={'Some message'}/>
-                <button>Add post</button>
+                <div>
+                    <textarea placeholder={'Some message'}/>
+                </div>
+                <div>
+                    <button>Add post</button>
+                </div>
             </div>
             <div className={classes.posts}>
-                <Post message={'Hi, ebba'} likeCount={'1'}/>
-                <Post message={'It is my first post'} likeCount={'2'}/>
+                <Post message='Hi, ebba' likeCount={'1'}/>
+                <Post message={'It is my first post'} likesCount={'2'}/>
             </div>
         </div>
     );
