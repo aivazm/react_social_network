@@ -12,3 +12,7 @@
 .item a.activeLink {
     color: gold;
 }
+
+.friendsBlock {
+    margin-top: 60px;
+}
