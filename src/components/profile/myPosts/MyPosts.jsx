@@ -2,8 +2,7 @@ import React from 'react';
 import './MyPosts.module.css';
 import classes from './MyPosts.module.css'
 import Post from "./post/Post";
-import {addPostActionCreator, updateNewPostTextActionCreator} from "../../../redux/state";
-
+import {addPostCreator, updateNewPostTextCreator} from "../../../redux/profileReducer";
 
 const MyPosts = (props) => {
     let postsElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount}/>);
@@ -11,12 +10,12 @@ const MyPosts = (props) => {
     let newPostElement = React.createRef();
 
     let addPost = () => {
-        props.dispatch(addPostActionCreator());
+        props.dispatch(addPostCreator());
     };
 
     let onPostChange = () => {
         let text = newPostElement.current.value;
-        props.dispatch(updateNewPostTextActionCreator(text));
+        props.dispatch(updateNewPostTextCreator(text));
     };
 
     return (
@@ -27,6 +26,7 @@ const MyPosts = (props) => {
                     <textarea onChange={onPostChange}
                               ref={newPostElement}
                               value={props.newPostText}
+                              placeholder={'Enter your post'}
                     />
                 </div>
                 <div>
