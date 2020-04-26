@@ -16,11 +16,6 @@ const Navbar = (props) => {
             <div className={classes.item}>
                 <NavLink to={"/news"} activeClassName={classes.activeLink}>News</NavLink>
             </div>
-            <div className={classes.friendsBlock}>
-                FRIENDS
-                <FriendsBar friends={props.sideBar.friends}/>
-            </div>
-
         </nav>
     );
 };

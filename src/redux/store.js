@@ -1,6 +1,6 @@
-import profileReducer from "./profileReducer";
-import dialogsReducer from "./dialogsReducer";
-import sidebarReducer from "./sidebarReducer";
+import profileReducer from "./reducers/profileReducer";
+import dialogsReducer from "./reducers/dialogsReducer";
+import sidebarReducer from "./reducers/sidebarReducer";
 
 let store = {
     _state: {
@@ -39,17 +39,7 @@ let store = {
             ],
             newMessageBody: ""
         },
-        sideBar: {
-            friends: [
-                {id: 1, name: 'first', avatar: 'https://klike.net/uploads/posts/2019-03/1551511784_4.jpg'},
-                {id: 2, name: 'second', avatar: 'https://klike.net/uploads/posts/2019-03/1551511791_8.jpg'},
-                {
-                    id: 3,
-                    name: 'third',
-                    avatar: 'https://st.depositphotos.com/1491329/4426/i/950/depositphotos_44267909-stock-photo-beautiful-woman-with-black-lace.jpg'
-                }
-            ]
-        }
+        sideBar: {}
     },
     _callSubscriber() {
         console.log('State changed');
