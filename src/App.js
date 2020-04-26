@@ -7,14 +7,14 @@ import {Route} from "react-router-dom";
 import News from "./components/news/News";
 import DialogsContainer from "./components/dialogs/DialogsContainer";
 
-const App = (props) => {
+const App = () => {
     return (
         <div className='app-wrapper'>
             <Header/>
-            <Navbar sideBar={props.state.sideBar}/>
+            <Navbar/>
             <div className='app-wrapper-content'>
-                <Route path='/dialogs' render={() => <DialogsContainer store={props.store}/>}/>
-                <Route path='/profile' render={() => <Profile store={props.store}/>}/>
+                <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                <Route path='/profile' render={() => <Profile/>}/>
                 <Route path='/news' render={() => <News/>}/>
             </div>
         </div>

@@ -3,7 +3,7 @@ import classes from './Navbar.module.css'
 import {NavLink} from "react-router-dom"
 import FriendsBar from "./friendsBar/FriendsBar";
 
-const Navbar = (props) => {
+const Navbar = () => {
 
     return (
         <nav className={classes.nav}>
