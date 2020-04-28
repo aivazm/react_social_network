@@ -5,17 +5,9 @@ import App from "./App";
 import React from "react";
 import {Provider} from "react-redux";
 
-let rerenderEntireTree = () => {
-    ReactDOM.render(
-        <BrowserRouter>
-            <Provider store={store}>
-                <App/>
-            </Provider>
-        </BrowserRouter>, document.getElementById('root'));
-};
-
-rerenderEntireTree(store.getState());
-
-store.subscribe(() => {
-    rerenderEntireTree();
-});
+ReactDOM.render(
+    <BrowserRouter>
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </BrowserRouter>, document.getElementById('root'));
