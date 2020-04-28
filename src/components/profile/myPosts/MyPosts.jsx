@@ -19,7 +19,7 @@ const MyPosts = (props) => {
 
     return (
         <div className={classes.postBlock}>
-            <h3>My posts</h3>
+            <div>My posts</div>
             <div>
                 <div>
                     <textarea onChange={onPostChange}
