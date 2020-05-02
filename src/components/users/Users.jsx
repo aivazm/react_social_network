@@ -4,8 +4,8 @@ import * as axios from 'axios';
 import defaultUserAva from '../../assets/images/user.png'
 
 class Users extends React.Component {
-    constructor(props) {
-        super(props);
+
+    componentDidMount() {
         const USERS_URL = 'https://social-network.samuraijs.com/api/1.0/users';
         axios.get(USERS_URL)
             .then(response => {
