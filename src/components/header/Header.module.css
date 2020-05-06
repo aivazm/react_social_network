@@ -6,3 +6,12 @@
 .header img {
     width: 100px;
 }
+
+.layer1 {
+    float: left; /* Обтекание по правому краю */
+    width: 300px;
+}
+.layer2 {
+    float: left; /* Обтекание по правому краю */
+
+}

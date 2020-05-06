@@ -1,26 +1,17 @@
 import React from 'react';
 import './Header.module.css';
 import classes from './Header.module.css'
-import image1 from '../../assets/images/header1.jpg'
-import image2 from '../../assets/images/header2.jpg'
-import image0 from '../../assets/images/header0.jpg'
-
-const getImage = () => {
-    let i = Math.floor(Math.random() * Math.floor(3));
-    switch (i) {
-        case 0:
-            return image0;
-        case 1:
-            return image1;
-        default:
-            return image2;
-    }
-};
+import logo from '../../assets/images/logo.png'
 
 const Header = () => {
     return (
         <header className={classes.header}>
-            <img src={getImage()} alt={'some alt'}/>
+            <div className={classes.layer1}>
+                <img src={logo} alt={'some alt'}/>
+            </div>
+            <div className={classes.layer2}>
+                <h1>Зулейха видит барана</h1>
+            </div>
         </header>
     );
 };
