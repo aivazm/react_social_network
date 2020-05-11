@@ -1,0 +1,15 @@
+.avatar {
+    height: 50px;
+    width: 50px;
+}
+
+.selectedPage {
+    font-weight: bold;
+}
+.pagesNumbers {
+    cursor: pointer;
+}
+
+.preloader {
+    float: top;
+}

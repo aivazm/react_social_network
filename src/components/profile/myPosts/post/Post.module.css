@@ -1,0 +1,21 @@
+.content {
+    grid-area: c;
+    background-color: darkgray;
+}
+
+.like {
+    color: lightyellow;
+}
+
+.likesCount {
+    color: lightyellow;
+}
+
+.item{
+    color: greenyellow;
+}
+.item img{
+    height: 50px;
+    width: 45px;
+    border-radius: 50px;
+}
