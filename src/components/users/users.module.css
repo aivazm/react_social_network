@@ -9,3 +9,7 @@
 .pagesNumbers {
     cursor: pointer;
 }
+
+.preloader {
+    float: top;
+}

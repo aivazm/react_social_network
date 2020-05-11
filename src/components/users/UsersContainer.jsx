@@ -12,6 +12,7 @@ import {
 } from "../../redux/reducers/usersReducer";
 import * as axios from "axios";
 import Preloader from "../common/Preloader";
+import styles from './users.module.css'
 
 
 class UsersContainer extends React.Component {
@@ -41,7 +42,7 @@ class UsersContainer extends React.Component {
 
     render() {
         return <>
-            {this.props.isFetching ? <Preloader/> : null}
+            {this.props.isFetching ? <div className={styles.preloader}><Preloader/></div> : null}
             <Users totalUsersCount={this.props.totalUsersCount}
                    pageSize={this.props.pageSize}
                    currentPage={this.props.currentPage}
