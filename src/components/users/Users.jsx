@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './users.module.css'
 import defaultUserAva from '../../assets/images/user.png'
 import {NavLink} from "react-router-dom";
-import * as axios from "axios";
+import {followAPI} from "../../api/api";
 
 let Users = (props) => {
     let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize);
@@ -10,12 +10,6 @@ let Users = (props) => {
     for (let i = 1; i <= pagesCount; i++) {
         pages.push(i);
     }
-    const HOST = `https://social-network.samuraijs.com/api/1.0/`;
-    const SERVICE = `follow/`;
-    let params = {
-        withCredentials: true,
-        headers: {"API-KEY": "9712e13b-e93f-4d8e-9679-af3d1bcb1b3d"}
-    };
     return (
         <div>
             <div className={styles.pagesNumbers}>
@@ -39,17 +33,17 @@ let Users = (props) => {
                         <div>
                             {u.followed
                                 ? <button onClick={() => {
-                                    axios.delete(HOST + SERVICE + u.id, params)
-                                        .then(response => {
-                                            if (response.data.resultCode === 0) {
+                                    followAPI.unfollow(u.id)
+                                        .then(data => {
+                                            if (data.resultCode === 0) {
                                                 props.unfollow(u.id)
                                             }
                                         });
                                 }}>unfollow</button>
                                 : <button onClick={() => {
-                                    axios.post(HOST + SERVICE + u.id, {}, params)
-                                        .then(response => {
-                                            if (response.data.resultCode === 0) {
+                                    followAPI.follow(u.id)
+                                        .then(data => {
+                                            if (data.resultCode === 0) {
                                                 props.follow(u.id)
                                             }
                                         });
