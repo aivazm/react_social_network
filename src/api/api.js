@@ -8,26 +8,14 @@ export const userAPI = {
                     return response.data;
                 })
         )
-    }
-};
-
-export const followAPI = {
+    },
     follow(userId) {
-        return (
-            axiosInstance.post(`follow/` + userId)
-                .then(response => {
-                    return response.data;
-                })
-        )
+        return axiosInstance.post(`follow/${userId}`)
+
     },
     unfollow(userId) {
-        return (
-            axiosInstance.delete(`follow/` + userId)
-                .then(response => {
-                    return response.data;
-                })
-        )
-    },
+        return axiosInstance.delete(`follow/${userId}`)
+    }
 };
 
 export const profileAPI = {
