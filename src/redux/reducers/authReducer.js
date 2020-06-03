@@ -28,7 +28,7 @@ export const setAuthUserData = (userId, login, email) => (
     {type: SET_USER_DATA, data: {userId, login, email}}
 );
 
-export const getHeader = () => {
+export const getAuthUserData = () => {
     return (dispatch) => {
         headerAPI.getHeader()
             .then(response => {

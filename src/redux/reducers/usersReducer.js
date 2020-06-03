@@ -1,5 +1,5 @@
 import {userAPI as usersAPI} from "../../api/api";
-import styles from '../../components/users/users.module.css'
+import styles from '../../components/users/Users.module.css'
 
 const FOLLOW = 'FOLLOW';
 const UNFOLLOW = 'UNFOLLOW';
@@ -68,6 +68,7 @@ const usersReducer = (state = initialState, action) => {
     }
 };
 
+// action creators
 export const followSuccess = (userId) => (
     {type: FOLLOW, userId: userId}
 );
@@ -90,6 +91,7 @@ export const toggleFollowingProgress = (isFetching, userId) => (
     {type: TOGGLE_IS_FOLLOWING_PROGRESS, isFetching: isFetching, userId}
 );
 
+// thunks
 export const getUsers = (currentPage, pageSize) => {
     return (dispatch) => {
         dispatch(toggleIsFetching(true));
