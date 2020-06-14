@@ -15,6 +15,12 @@ export const userAPI = {
 export const profileAPI = {
     getProfile(userId) {
         return axiosInstance.get(`profile/${userId}`)
+    },
+    getProfileStatus(userId) {
+        return axiosInstance.get(`profile/status/${userId}`)
+    },
+    updateProfileStatus(status) {
+        return axiosInstance.put(`profile/status`, {status: status})
     }
 };
 

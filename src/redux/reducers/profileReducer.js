@@ -4,6 +4,8 @@ import {followSuccess, toggleFollowingProgress} from "./usersReducer";
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET_USER_PROFILE';
+const SET_PROFILE_STATUS = 'SET_PROFILE_STATUS';
+
 
 const initialState = {
     posts: [
@@ -11,7 +13,8 @@ const initialState = {
         {id: 2, message: 'It is my first post', likesCount: 10}
     ],
     newPostText: 'new text',
-    profile: null
+    profile: null,
+    status: ""
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -38,6 +41,11 @@ const profileReducer = (state = initialState, action) => {
                 ...state,
                 profile: action.profile
             };
+        case SET_PROFILE_STATUS:
+            return {
+                ...state,
+                status: action.status
+            };
         default:
             return state;
     }
@@ -52,6 +60,9 @@ export const updateNewPostText = (text) => (
 export const setUserProfile = (profile) => (
     {type: SET_USER_PROFILE, profile}
 );
+export const setProfileStatus = (status) => (
+    {type: SET_PROFILE_STATUS, status}
+);
 
 export const getProfile = (userId) => {
     return (dispatch) => {
@@ -63,6 +74,24 @@ export const getProfile = (userId) => {
                 dispatch(setUserProfile(response.data));
             });
     }
+};
+
+// thunk получения статуса пользователя
+export const getProfileStatus = (userId) => (dispatch) => {
+        profileAPI.getProfileStatus(userId)
+            .then(response => {
+                dispatch(setProfileStatus(response.data));
+            });
+};
+
+// thunk обновления статуса пользователя
+export const updateProfileStatus = (status) => (dispatch) => {
+    profileAPI.updateProfileStatus(status)
+        .then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(setProfileStatus(status));
+            }
+        });
 };
 
 export default profileReducer;
